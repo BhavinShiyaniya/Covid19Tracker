@@ -1,0 +1,89 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/img/currencybg.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 45px;
+    /* background-color: rgba(127, 255, 212, 0.359); */
+}
+
+p {
+    background-color: rgba(255, 255, 255, 0.132);
+}
+
+.container {
+    padding: 40px;
+    margin-top: 40px;
+    width: 800px;
+    height: 400px;
+    background: hsl(240, 96%, 56%);
+    background: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 20px;
+}
+
+.convert {
+    display: inline-flex;
+}
+
+p {
+    padding-right: 250px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #fff;
+}
+
+input[type="number"] {
+    height: 33px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    outline: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+select {
+    margin-left: 22px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 20px;
+}
+
+input[type="submit"] {
+    margin: 40px 180px;
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background: green;
+    color: #fff;
+    font-size: 30px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(1, 105, 53);
+    cursor: pointer;
+}
+
+#results {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(20, 3, 255);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.559);
+}
