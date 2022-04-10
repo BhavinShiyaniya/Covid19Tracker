@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covid-19 Tracker</title>
-    <!-- <base href="https://BhavinShiyaniya.github.io/Covid19Tracker/"> -->
+    <base href="https://BhavinShiyaniya.github.io/Covid19Tracker/">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -115,6 +115,68 @@
             <!-- end c data -->
         </div>
     </div>
+
+    <script>
+    const URL = "https://covid19.mathdro.id/api";
+
+    var app = angular.module("MyApp", []);
+
+    // var app = angular.module("MyApp", ["ngRoute"]);
+    // app.config(function ($routeProvider) {
+    // $routeProvider
+    // .when("/", {
+    // templateUrl: "index.html"
+    // })
+    // .when("/coronatracker", {
+    // templateUrl: "index.html"
+    // })
+    // .when("/currencyconverter", {
+    // templateUrl: "currency.html"
+    // })
+    // .otherwise({
+    // templateUrl: "index.html"
+    // });
+    // });
+
+    app.controller("MyCtrl", ($scope, $http) => {
+    // this is controller
+    $scope.title = "Stay Home Stay Safe";
+
+    console.log("APP Loaded.");
+
+    // calling api
+
+    $http.get(URL).then(
+    (response) => {
+    // success
+    console.log(response.data);
+    $scope.all_data = response.data;
+    },
+    (error) => {
+    // error
+    console.log(error);
+    });
+
+    // get country data
+
+    $scope.get_c_data = () => {
+    let country = $scope.c;
+    if (country == "") {
+    $scope.c_data = undefined;
+    return;
+    }
+
+    $http.get(`${URL}/countries/${country}`)
+    .then((response) => {
+    console.log(response.data);
+    $scope.c_data = response.data;
+    },
+    (error) => {
+    console.log(error);
+    });
+    };
+    });
+    </script>
 </body>
 
 </html>
