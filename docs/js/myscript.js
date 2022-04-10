@@ -1,23 +1,23 @@
 const URL = "https://covid19.mathdro.id/api";
 
-// var app = angular.module("MyApp", []);
+var app = angular.module("MyApp", []);
 
-var app = angular.module("MyApp", ["ngRoute"]);
-app.config(function ($routeProvider) {
-    $routeProvider
-        .when("/", {
-            templateUrl: "index.html"
-        })
-        .when("/coronatracker", {
-            templateUrl: "index.html"
-        })
-        .when("/currencyconverter", {
-            templateUrl: "currency.html"
-        })
-        .otherwise({
-            templateUrl: "index.html"
-        });
-});
+// var app = angular.module("MyApp", ["ngRoute"]);
+// app.config(function ($routeProvider) {
+//     $routeProvider
+//         .when("/", {
+//             templateUrl: "index.html"
+//         })
+//         .when("/coronatracker", {
+//             templateUrl: "index.html"
+//         })
+//         .when("/currencyconverter", {
+//             templateUrl: "currency.html"
+//         })
+//         .otherwise({
+//             templateUrl: "index.html"
+//         });
+// });
 
 app.controller("MyCtrl", ($scope, $http) => {
     // this is controller
